@@ -1,0 +1,2027 @@
+/* ============================================================
+   style.css — التنسيقات الكاملة للتطبيق
+   الإصدار: 3.0
+   ============================================================ */
+
+/* ===== إعادة الضبط الأساسي ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  word-spacing: 2px;
+  letter-spacing: 0;
+}
+
+body {
+  background: #F4F6FB;
+  color: #222;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  direction: rtl;
+  line-height: 1.7;
+}
+
+p, span, div, li, strong {
+  word-spacing: 2px;
+  line-height: 1.75;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+.screen.active {
+  display: block;
+}
+
+/* ============================================================
+   الأشرطة العلوية
+   ============================================================ */
+.topbar-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #1A237E;
+  color: #fff;
+}
+.topbar-home h3 {
+  font-size: 16px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #1A237E;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar h2 {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+.btn-back, .btn-fav {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.btn-fav.active {
+  color: #FF5252;
+}
+
+/* ============================================================
+   الشاشة الرئيسية
+   ============================================================ */
+.header {
+  text-align: center;
+  padding: 40px 20px 24px;
+}
+.header h1 {
+  font-size: 30px;
+  color: #1A237E;
+  margin-bottom: 10px;
+}
+.header p {
+  color: #666;
+  font-size: 15px;
+}
+
+.search-box {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.search-box input,
+.search-box textarea {
+  padding: 18px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #C5CAE9;
+  border-radius: 14px;
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+}
+.search-box textarea {
+  text-align: right;
+  font-size: 15px;
+  resize: vertical;
+}
+.search-box input:focus,
+.search-box textarea:focus {
+  border-color: #1A237E;
+}
+
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 2px solid #C5CAE9;
+  font-size: 14px;
+}
+.date-row label {
+  color: #666;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.date-row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #1A237E;
+  font-weight: bold;
+}
+
+.btn-primary {
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #1A237E;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.btn-primary:active {
+  transform: scale(.97);
+  background: #0D1B5E;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px 20px;
+  justify-content: center;
+}
+.btn-outline {
+  flex: 1 1 45%;
+  padding: 14px;
+  font-size: 15px;
+  background: #fff;
+  color: #1A237E;
+  border: 2px solid #C5CAE9;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.btn-outline:active {
+  background: #E8EAF6;
+}
+
+/* ============================================================
+   البطاقات
+   ============================================================ */
+.result-content, .list-content {
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1A237E;
+  margin-bottom: 12px;
+  border-right: 4px solid #1A237E;
+  padding-right: 10px;
+}
+
+.meaning-text {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+}
+.meta-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.meta-badge {
+  background: #E8EAF6;
+  color: #1A237E;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ============================================================
+   السرد التسلسلي
+   ============================================================ */
+.narrative-box {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+.narrative-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nar-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  background: #F7F8FC;
+  border-radius: 10px;
+}
+.nar-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1A237E;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.nar-char {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1A237E;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.nar-text {
+  flex: 1;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   الملخص الشبكي
+   ============================================================ */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sum-item {
+  background: #F7F8FC;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+.sum-lbl {
+  font-size: 11.5px;
+  color: #888;
+  margin-bottom: 4px;
+}
+.sum-val {
+  font-size: 15px;
+  font-weight: bold;
+  color: #1A237E;
+}
+
+/* ============================================================
+   المزاج
+   ============================================================ */
+.temp-box {
+  padding: 4px;
+}
+.temp-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+  font-size: 14px;
+}
+.temp-row:last-of-type {
+  border-bottom: none;
+}
+.temp-row strong {
+  color: #1A237E;
+}
+.temp-desc {
+  margin-top: 12px;
+  padding: 12px;
+  background: #F7F8FC;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #444;
+  border-right: 3px solid #1A237E;
+}
+
+/* ============================================================
+   التوازنات
+   ============================================================ */
+.balance-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 12.5px;
+}
+.balance-label {
+  color: #555;
+}
+.balance-bar {
+  height: 10px;
+  background: #E0E0E0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.balance-bar > div {
+  height: 100%;
+  transition: width .4s;
+}
+.bar-light { background: linear-gradient(90deg, #FFD54F, #FFB300); }
+.bar-male  { background: linear-gradient(90deg, #42A5F5, #1E88E5); }
+.bar-spoken { background: linear-gradient(90deg, #66BB6A, #43A047); }
+.bar-beauty { background: linear-gradient(90deg, #EC407A, #C2185B); }
+.balance-nums {
+  text-align: left;
+  font-weight: bold;
+  color: #1A237E;
+}
+
+.distrib {
+  margin-top: 12px;
+  padding: 12px;
+  background: #F7F8FC;
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 2;
+  color: #555;
+}
+
+/* ============================================================
+   الملف النفسي
+   ============================================================ */
+.personality-list {
+  list-style: none;
+  padding: 0;
+}
+.personality-list li {
+  padding: 10px 32px 10px 12px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  border-bottom: 1px dashed #EEE;
+}
+.personality-list li:last-child {
+  border-bottom: none;
+}
+.personality-list li::before {
+  content: "◆";
+  color: #1A237E;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   بطاقة الحرف
+   ============================================================ */
+.letter-full {
+  padding: 14px 0;
+  border-bottom: 1px solid #EEE;
+}
+.letter-full:last-child {
+  border-bottom: none;
+}
+
+.letter-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.letter-char-big {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1A237E;
+  width: 60px;
+  text-align: center;
+  background: #E8EAF6;
+  border-radius: 12px;
+  padding: 4px 0;
+}
+.letter-head-info {
+  flex: 1;
+}
+.letter-keyword {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1A237E;
+}
+.letter-order {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.letter-nili {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+  background: #F7F8FC;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border-right: 3px solid #1A237E;
+  margin-bottom: 10px;
+}
+
+.letter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  background: #F7F8FC;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.info-item .lbl {
+  color: #888;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+.info-item .val {
+  color: #1A237E;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   القوائم
+   ============================================================ */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.list-item:active {
+  background: #E8EAF6;
+}
+.list-item .item-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1A237E;
+}
+.list-item .item-sub {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+}
+.list-item .item-arrow {
+  color: #C5CAE9;
+  font-size: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.btn-danger {
+  background: #FF5252;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ============================================================
+   الوفق
+   ============================================================ */
+.wafq-container {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+.wafq-grid {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  box-shadow: 0 4px 16px rgba(26,35,126,.3);
+  max-width: 100%;
+}
+.wafq-cell {
+  aspect-ratio: 1/1;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1A237E;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+}
+.wafq-info {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.9;
+}
+.wafq-info .wafq-key {
+  display: inline-block;
+  background: #E8EAF6;
+  color: #1A237E;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 0 4px;
+}
+
+/* ============================================================
+   البرج
+   ============================================================ */
+.zodiac-merge {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: #F7F8FC;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+.zodiac-badge {
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #E8EAF6;
+}
+.zodiac-badge .zz-icon {
+  font-size: 28px;
+}
+.zodiac-badge .zz-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1A237E;
+  margin-top: 4px;
+}
+.zodiac-badge .zz-sub {
+  font-size: 10.5px;
+  color: #888;
+  margin-top: 2px;
+}
+.zodiac-plus {
+  font-size: 22px;
+  color: #1A237E;
+}
+.zodiac-result {
+  text-align: center;
+  padding: 14px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   الإعدادات
+   ============================================================ */
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #EEE;
+  font-size: 15px;
+}
+.switch {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: #C5CAE9;
+  position: relative;
+  cursor: pointer;
+  transition: background .3s;
+}
+.switch.on {
+  background: #1A237E;
+}
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform .3s;
+}
+.switch.on::after {
+  transform: translateX(-22px);
+}
+
+/* ============================================================
+   الاسم المقترح
+   ============================================================ */
+.generator-box {
+  text-align: center;
+  padding: 30px 16px;
+}
+.generator-name {
+  font-size: 42px;
+  font-weight: bold;
+  color: #1A237E;
+  margin: 20px 0;
+  min-height: 60px;
+}
+.generator-meaning {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+/* ============================================================
+   Toast
+   ============================================================ */
+.share-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #1A237E;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  z-index: 9999;
+  transition: transform .3s;
+}
+.share-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   الخاتم الروحاني
+   ============================================================ */
+.talisman {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+.talisman-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #E8EAF6 0%, #C5CAE9 60%, #1A237E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(26,35,126,.25);
+  animation: rotateSlow 30s linear infinite;
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.talisman-center {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1A237E;
+  letter-spacing: 4px;
+  box-shadow: inset 0 0 12px rgba(26,35,126,.2);
+  animation: rotateSlowReverse 30s linear infinite;
+}
+@keyframes rotateSlowReverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+.talisman-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+.talisman-dot {
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFD54F;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+.talisman-dot:nth-child(1) { transform: rotate(0deg) translate(0, -95px); }
+.talisman-dot:nth-child(2) { transform: rotate(45deg) translate(0, -95px); }
+.talisman-dot:nth-child(3) { transform: rotate(90deg) translate(0, -95px); }
+.talisman-dot:nth-child(4) { transform: rotate(135deg) translate(0, -95px); }
+.talisman-dot:nth-child(5) { transform: rotate(180deg) translate(0, -95px); }
+.talisman-dot:nth-child(6) { transform: rotate(225deg) translate(0, -95px); }
+.talisman-dot:nth-child(7) { transform: rotate(270deg) translate(0, -95px); }
+.talisman-dot:nth-child(8) { transform: rotate(315deg) translate(0, -95px); }
+
+.talisman-info { padding: 10px 0; }
+.talisman-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #E0E0E0;
+  font-size: 14px;
+}
+.talisman-row:last-child {
+  border-bottom: none;
+}
+.talisman-row strong {
+  color: #1A237E;
+}
+.talisman-verse {
+  background: #F7F8FC;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  color: #1A237E;
+  font-weight: 600;
+  margin: 8px 0;
+  border-right: 3px solid #1A237E;
+  line-height: 1.9;
+}
+.talisman-note {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.9;
+  margin-top: 10px;
+  text-align: center;
+}
+.export-actions button {
+  width: 100%;
+}
+
+/* ============================================================
+   علم الجفر
+   ============================================================ */
+.jafr-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.jafr-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 10px;
+  background: #F7F8FC;
+  color: #1A237E;
+  border: 2px solid #E0E3EE;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s;
+}
+.jafr-btn:hover {
+  background: #E8EAF6;
+}
+.jafr-btn:active {
+  transform: scale(.97);
+}
+.jafr-btn.primary {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #FFFFFF;
+  border-color: #1A237E;
+}
+.jafr-icon {
+  font-size: 24px;
+}
+
+.jafr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.jafr-table thead {
+  background: #1A237E;
+  color: #FFFFFF;
+}
+.jafr-table th {
+  padding: 10px 8px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 12.5px;
+}
+.jafr-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #EEE;
+  color: #333;
+}
+.jafr-table tbody tr:hover {
+  background: #F7F8FC;
+}
+.jafr-table .letter-cell {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1A237E;
+  text-align: center;
+  width: 50px;
+}
+.jafr-table .letters-cell {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1A237E;
+  letter-spacing: 2px;
+}
+
+.jafr-list {
+  padding-right: 20px;
+  line-height: 2.2;
+  color: #333;
+  font-size: 14px;
+}
+.jafr-list li strong {
+  color: #1A237E;
+}
+
+.circle-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.circle-cell {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  border-radius: 8px;
+  padding: 8px 4px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(26,35,126,.2);
+}
+.circle-cell .circle-letter {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.circle-cell .circle-value {
+  font-size: 10px;
+  color: #FFD54F;
+  margin-top: 2px;
+}
+.circle-grid.ayqagh .circle-cell {
+  background: linear-gradient(135deg, #4A148C, #6A1B9A);
+}
+
+.nature-card {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #F7F8FC;
+  border-right: 4px solid #1A237E;
+  border-radius: 10px;
+}
+.nature-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+.nature-letters {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1A237E;
+  letter-spacing: 4px;
+  text-align: right;
+}
+
+.example-box {
+  background: #F7F8FC;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 2;
+  color: #444;
+  border-right: 3px solid #1A237E;
+  font-family: 'Courier New', monospace;
+}
+
+.jafr-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px;
+  background: #F7F8FC;
+  border-radius: 10px;
+}
+.jafr-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+}
+.jafr-row-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1A237E;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.jafr-row-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1A237E;
+  letter-spacing: 3px;
+}
+
+/* ============================================================
+   محرك المعنى الدلالي
+   ============================================================ */
+.ai-match {
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #F7F8FC;
+  border-radius: 10px;
+  border-right: 3px solid #C5CAE9;
+}
+.ai-match-top {
+  border-right-color: #1A237E;
+  background: linear-gradient(90deg, #E8EAF6, #F7F8FC);
+}
+.ai-match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ai-confidence {
+  background: #1A237E;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.ai-harmony {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ai-harmony-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#1A237E var(--score), #E0E3EE 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.ai-harmony-circle::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.ai-harmony-circle span {
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  color: #1A237E;
+  font-size: 18px;
+}
+.ai-harmony-text {
+  flex: 1;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ============================================================
+   الحكم الجفري
+   ============================================================ */
+.jafr-verdict {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+}
+.jafr-verdict .card-title {
+  color: #FFD700;
+  border-color: #FFD700;
+}
+.jafr-verdict-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(255,215,0,0.4);
+}
+.jafr-verdict-icon {
+  font-size: 48px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.jafr-verdict-text {
+  flex: 1;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 500;
+}
+.jafr-hall {
+  text-align: center;
+  padding: 20px;
+  background: #F7F8FC;
+  border-radius: 12px;
+}
+.jafr-hall-word {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #FFD700;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  border-radius: 12px;
+  font-family: 'Amiri', serif;
+  box-shadow: 0 4px 16px rgba(26,35,126,.3);
+}
+
+/* ============================================================
+   الذكاء الاصطناعي — Gemini
+   ============================================================ */
+.ai-card {
+  background: linear-gradient(135deg, #0F1A2E, #1A237E) !important;
+  border: 2px solid #4A90E2 !important;
+  position: relative;
+  overflow: hidden;
+}
+.ai-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74,144,226,0.15), transparent);
+  animation: aiShine 3s infinite;
+  pointer-events: none;
+}
+@keyframes aiShine {
+  to { left: 100%; }
+}
+.ai-card .card-title {
+  color: #4A90E2 !important;
+  border-color: #4A90E2 !important;
+}
+.ai-content {
+  color: #FFFFFF;
+  font-size: 14.5px;
+  line-height: 1.95;
+  word-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+.ai-content strong {
+  color: #FFD54F;
+  display: inline-block;
+  margin: 0 2px;
+}
+.ai-content em {
+  color: #90CAF9;
+  font-style: normal;
+}
+.ai-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #4A90E2;
+  font-size: 14px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+.ai-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(74,144,226,0.3);
+  border-top-color: #4A90E2;
+  border-radius: 50%;
+  animation: aiSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes aiSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   التحليل الجامع — Deep Semantic
+   ============================================================ */
+.deep-header {
+  text-align: center;
+  padding: 20px 0;
+}
+.deep-word {
+  font-size: 42px;
+  font-weight: bold;
+  color: #4A148C;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.deep-arrow {
+  font-size: 28px;
+  color: #C5CAE9;
+  margin: 10px 0;
+}
+.deep-root {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1A237E;
+  background: #E8EAF6;
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 12px;
+}
+.deep-badge {
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 16px;
+}
+.deep-badge-spiritual {
+  background: linear-gradient(135deg, #4A148C, #7B1FA2);
+  color: #FFFFFF;
+}
+.deep-badge-material {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #FFFFFF;
+}
+
+.comprehensive-letter {
+  padding: 16px 0;
+  border-bottom: 1px solid #EEE;
+}
+.comprehensive-letter:last-child {
+  border-bottom: none;
+}
+
+.comprehensive-char {
+  font-size: 56px;
+  font-weight: bold;
+  color: #1A237E;
+  text-align: center;
+  background: #E8EAF6;
+  border-radius: 14px;
+  padding: 8px;
+  margin-bottom: 12px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.layer-box {
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.layer-kinetic {
+  background: linear-gradient(135deg, #E8EAF6, #F7F8FC);
+  border-right: 3px solid #1A237E;
+}
+.layer-divine {
+  background: linear-gradient(135deg, #F3E5F5, #FCE4EC);
+  border-right: 3px solid #4A148C;
+}
+
+.layer-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.layer-kinetic .layer-title { color: #1A237E; }
+.layer-divine .layer-title { color: #4A148C; }
+
+.layer-kinetic-keyword {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1A237E;
+  margin-bottom: 6px;
+}
+.layer-kinetic-text {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 8px;
+}
+.layer-nili {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #555;
+  background: rgba(255,255,255,0.7);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.layer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.meta-tag {
+  background: #FFFFFF;
+  color: #1A237E;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  font-weight: bold;
+  border: 1px solid #C5CAE9;
+}
+
+.divine-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+.divine-row:last-child {
+  margin-bottom: 0;
+}
+.divine-source {
+  color: #4A148C;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-size: 12.5px;
+}
+.divine-text {
+  color: #333;
+  font-style: italic;
+}
+
+.deep-synthesis {
+  background: #F7F8FC;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.95;
+  color: #333;
+}
+.deep-synthesis-head {
+  color: #4A148C;
+  font-weight: bold;
+  font-size: 14.5px;
+  margin: 12px 0 6px;
+  border-right: 3px solid #4A148C;
+  padding-right: 10px;
+}
+.deep-synthesis-head:first-child {
+  margin-top: 0;
+}
+.deep-synthesis-line {
+  color: #444;
+  padding-right: 12px;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+.deep-nature {
+  margin-top: 12px;
+  padding: 12px;
+  background: #F7F8FC;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+.deep-nature strong {
+  color: #4A148C;
+  font-size: 16px;
+}
+
+/* ============================================================
+   الآيات القرآنية
+   ============================================================ */
+.quran-card {
+  background: linear-gradient(135deg, #F7F8FC, #E8EAF6) !important;
+  border-right: 4px solid #1A237E;
+}
+.quran-verse {
+  padding: 14px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  border-right: 3px solid #4A148C;
+  box-shadow: 0 2px 6px rgba(0,0,0,.04);
+}
+.quran-verse-num {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1A237E;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quran-verse-text {
+  font-size: 16px;
+  line-height: 2;
+  color: #1A237E;
+  text-align: center;
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  font-weight: 500;
+  padding: 8px 0;
+}
+.quran-verse-ref {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   الذكاء التفاعلي
+   ============================================================ */
+.interactive-card {
+  background: linear-gradient(135deg, #1A237E, #4A148C) !important;
+  color: #FFFFFF !important;
+}
+.interactive-card .card-title {
+  color: #FFD54F !important;
+  border-color: #FFD54F !important;
+}
+.interactive-card p {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.interactive-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.interactive-btn {
+  padding: 12px 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,215,0,0.4);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+  text-align: center;
+}
+.interactive-btn:active {
+  background: rgba(255,215,0,0.2);
+  transform: scale(.97);
+}
+
+#followUpInput {
+  background: rgba(255,255,255,0.95) !important;
+  color: #1A237E !important;
+  border-color: rgba(255,215,0,0.4) !important;
+}
+
+/* ============================================================
+   شرائح الأمثلة
+   ============================================================ */
+.example-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  padding: 8px 16px;
+  background: #E8EAF6;
+  color: #1A237E;
+  border: 1.5px solid #C5CAE9;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .15s;
+  font-family: inherit;
+}
+.chip:active {
+  background: #1A237E;
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   الوضع الليلي
+   ============================================================ */
+body.dark {
+  background: #0F1419;
+  color: #E8EAED;
+}
+body.dark .card {
+  background: #1C2128;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+body.dark .card-title {
+  color: #8AB4F8;
+  border-color: #8AB4F8;
+}
+body.dark .meaning-text,
+body.dark .nar-text,
+body.dark .info-item .val,
+body.dark .temp-desc,
+body.dark .personality-list li {
+  color: #D0D4D9;
+}
+body.dark .letter-nili,
+body.dark .nar-step,
+body.dark .sum-item,
+body.dark .info-item,
+body.dark .temp-desc,
+body.dark .distrib {
+  background: #242A33;
+  color: #D0D4D9;
+}
+body.dark .sum-val {
+  color: #8AB4F8;
+}
+body.dark .search-box input,
+body.dark .search-box textarea,
+body.dark .date-row {
+  background: #1C2128;
+  border-color: #3A4150;
+  color: #E8EAED;
+}
+body.dark .date-row input {
+  color: #8AB4F8;
+}
+body.dark .date-row label {
+  color: #9AA0A6;
+}
+body.dark .btn-outline {
+  background: #1C2128;
+  color: #8AB4F8;
+  border-color: #3A4150;
+}
+body.dark .list-item {
+  background: #1C2128;
+}
+body.dark .list-item .item-name {
+  color: #8AB4F8;
+}
+body.dark .list-item .item-sub {
+  color: #9AA0A6;
+}
+body.dark .header h1 {
+  color: #8AB4F8;
+}
+body.dark .header p {
+  color: #9AA0A6;
+}
+body.dark .info-item .lbl {
+  color: #9AA0A6;
+}
+body.dark .balance-bar {
+  background: #3A4150;
+}
+body.dark .empty-state {
+  color: #6A6F78;
+}
+body.dark .temp-row {
+  border-color: #2A3038;
+}
+body.dark .letter-full {
+  border-color: #2A3038;
+}
+body.dark .settings-row {
+  border-color: #2A3038;
+}
+body.dark .zodiac-merge {
+  background: #242A33;
+}
+body.dark .zodiac-badge {
+  background: #1C2128;
+  border-color: #2A3038;
+}
+body.dark .zodiac-badge .zz-name {
+  color: #8AB4F8;
+}
+body.dark .zodiac-badge .zz-sub {
+  color: #9AA0A6;
+}
+body.dark .zodiac-plus {
+  color: #8AB4F8;
+}
+body.dark .generator-name {
+  color: #8AB4F8;
+}
+body.dark .generator-meaning {
+  color: #9AA0A6;
+}
+body.dark .talisman-center {
+  background: #242A33;
+  color: #8AB4F8;
+}
+body.dark .talisman-verse {
+  background: #242A33;
+  color: #8AB4F8;
+  border-color: #8AB4F8;
+}
+body.dark .talisman-row {
+  border-color: #2A3038;
+}
+body.dark .talisman-row strong {
+  color: #8AB4F8;
+}
+body.dark .wafq-cell {
+  color: #8AB4F8;
+  background: #242A33;
+}
+body.dark .wafq-info {
+  color: #9AA0A6;
+}
+body.dark .wafq-info .wafq-key {
+  background: #2A3038;
+  color: #8AB4F8;
+}
+body.dark .jafr-btn {
+  background: #242A33;
+  color: #8AB4F8;
+  border-color: #3A4150;
+}
+body.dark .jafr-btn:hover {
+  background: #2A3038;
+}
+body.dark .jafr-btn.primary {
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: #FFFFFF;
+}
+body.dark .jafr-table td {
+  border-color: #2A3038;
+  color: #D0D4D9;
+}
+body.dark .jafr-table tbody tr:hover {
+  background: #242A33;
+}
+body.dark .jafr-table .letter-cell,
+body.dark .jafr-table .letters-cell {
+  color: #8AB4F8;
+}
+body.dark .nature-card {
+  background: #242A33;
+}
+body.dark .nature-letters {
+  color: #8AB4F8;
+}
+body.dark .example-box {
+  background: #242A33;
+  color: #D0D4D9;
+  border-color: #8AB4F8;
+}
+body.dark .jafr-rows {
+  background: #242A33;
+}
+body.dark .jafr-row {
+  background: #1C2128;
+}
+body.dark .jafr-row-text {
+  color: #8AB4F8;
+}
+body.dark .jafr-list {
+  color: #D0D4D9;
+}
+body.dark .jafr-list li strong {
+  color: #8AB4F8;
+}
+body.dark .ai-match {
+  background: #242A33;
+}
+body.dark .ai-match-top {
+  background: linear-gradient(90deg, #2A3038, #242A33);
+  border-right-color: #8AB4F8;
+}
+body.dark .ai-harmony-circle::after {
+  background: #1C2128;
+}
+body.dark .ai-harmony-circle span {
+  color: #8AB4F8;
+}
+body.dark .ai-harmony-text {
+  color: #D0D4D9;
+}
+body.dark .jafr-hall {
+  background: #242A33;
+}
+body.dark #jafrQuestion {
+  background: #1C2128 !important;
+  color: #E8EAED !important;
+  border-color: #3A4150 !important;
+}
+body.dark .ai-card {
+  background: linear-gradient(135deg, #0A1225, #131A35) !important;
+}
+body.dark #geminiKeyInput {
+  background: #1C2128 !important;
+  color: #E8EAED !important;
+  border-color: #3A4150 !important;
+}
+body.dark .deep-word {
+  color: #CE93D8;
+}
+body.dark .deep-root {
+  background: #242A33;
+  color: #CE93D8;
+}
+body.dark .comprehensive-char {
+  background: #242A33;
+  color: #8AB4F8;
+}
+body.dark .layer-kinetic {
+  background: linear-gradient(135deg, #242A33, #1C2128);
+}
+body.dark .layer-divine {
+  background: linear-gradient(135deg, #2A1F33, #331F2A);
+}
+body.dark .layer-kinetic .layer-title {
+  color: #8AB4F8;
+}
+body.dark .layer-divine .layer-title {
+  color: #CE93D8;
+}
+body.dark .layer-kinetic-keyword {
+  color: #8AB4F8;
+}
+body.dark .layer-kinetic-text {
+  color: #D0D4D9;
+}
+body.dark .layer-nili {
+  background: rgba(0,0,0,0.2);
+  color: #B0B4B9;
+}
+body.dark .meta-tag {
+  background: #1C2128;
+  color: #8AB4F8;
+  border-color: #3A4150;
+}
+body.dark .divine-source {
+  color: #CE93D8;
+}
+body.dark .divine-text {
+  color: #D0D4D9;
+}
+body.dark .comprehensive-letter {
+  border-color: #2A3038;
+}
+body.dark .deep-synthesis {
+  background: #242A33;
+  color: #D0D4D9;
+}
+body.dark .deep-synthesis-head {
+  color: #CE93D8;
+  border-color: #CE93D8;
+}
+body.dark .deep-synthesis-line {
+  color: #D0D4D9;
+}
+body.dark .deep-nature {
+  background: #242A33;
+  color: #B0B4B9;
+}
+body.dark .deep-nature strong {
+  color: #CE93D8;
+}
+body.dark #deepWordInput {
+  background: #1C2128 !important;
+  color: #E8EAED !important;
+  border-color: #3A4150 !important;
+}
+body.dark .quran-card {
+  background: linear-gradient(135deg, #1C2128, #242A33) !important;
+}
+body.dark .quran-verse {
+  background: #242A33;
+  border-color: #CE93D8;
+}
+body.dark .quran-verse-text {
+  color: #8AB4F8;
+}
+body.dark .quran-verse-ref {
+  color: #9AA0A6;
+}
+body.dark .chip {
+  background: #242A33;
+  color: #8AB4F8;
+  border-color: #3A4150;
+}
+body.dark .chip:active {
+  background: #8AB4F8;
+  color: #1C2128;
+}
+body.dark #followUpInput {
+  background: #1C2128 !important;
+  color: #E8EAED !important;
+}
+
+/* ============================================================
+   شاشة الافتتاحية (Splash Screen)
+   ============================================================ */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at 50% 40%, #3949AB 0%, #283593 40%, #0D1B5E 70%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .7s ease, visibility .7s ease;
+  overflow: hidden;
+}
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#splash-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,215,0,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,215,0,0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+#splash-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 60px,
+      rgba(255,215,0,0.02) 60px, rgba(255,215,0,0.02) 61px);
+  pointer-events: none;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: splashFadeIn .8s ease-out;
+}
+@keyframes splashFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.splash-logo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.splash-circle-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background:
+    linear-gradient(#0D1B5E, #0D1B5E) padding-box,
+    linear-gradient(135deg, #FFE082, #FFD54F 50%, #FFB300) border-box;
+  box-shadow:
+    0 0 40px rgba(255,213,79,0.4),
+    0 0 80px rgba(255,213,79,0.2),
+    inset 0 0 30px rgba(255,213,79,0.15);
+  animation: splashPulse 2s ease-in-out infinite;
+}
+@keyframes splashPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 40px rgba(255,213,79,0.4),
+      0 0 80px rgba(255,213,79,0.2),
+      inset 0 0 30px rgba(255,213,79,0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 60px rgba(255,213,79,0.6),
+      0 0 110px rgba(255,213,79,0.3),
+      inset 0 0 40px rgba(255,213,79,0.25);
+  }
+}
+.splash-circle-outer::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,213,79,0.4);
+  animation: splashRotate 12s linear infinite;
+}
+@keyframes splashRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.splash-circle-inner {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 0%, #F4F6FB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px rgba(26,35,126,0.15);
+}
+.splash-letter {
+  font-size: 90px;
+  font-weight: bold;
+  color: #1A237E;
+  text-shadow: 0 2px 8px rgba(26,35,126,0.3);
+  animation: splashLetterBeat 1.5s ease-in-out infinite;
+}
+@keyframes splashLetterBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.splash-dot {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFD54F;
+  text-shadow: 0 0 10px rgba(255,213,79,0.8);
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  animation: splashDotGlow 2s ease-in-out infinite;
+}
+@keyframes splashDotGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.dot-1 { transform: rotate(0deg)   translate(-50%, -50%) translateY(-95px); animation-delay: 0s; }
+.dot-2 { transform: rotate(45deg)  translate(-50%, -50%) translateY(-95px); animation-delay: .25s; }
+.dot-3 { transform: rotate(90deg)  translate(-50%, -50%) translateY(-95px); animation-delay: .5s; }
+.dot-4 { transform: rotate(135deg) translate(-50%, -50%) translateY(-95px); animation-delay: .75s; }
+.dot-5 { transform: rotate(180deg) translate(-50%, -50%) translateY(-95px); animation-delay: 1s; }
+.dot-6 { transform: rotate(225deg) translate(-50%, -50%) translateY(-95px); animation-delay: 1.25s; }
+.dot-7 { transform: rotate(270deg) translate(-50%, -50%) translateY(-95px); animation-delay: 1.5s; }
+.dot-8 { transform: rotate(315deg) translate(-50%, -50%) translateY(-95px); animation-delay: 1.75s; }
+
+.splash-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  text-shadow:
+    0 0 20px rgba(255,213,79,0.6),
+    0 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  animation: splashFadeIn 1s ease-out .3s both;
+}
+.splash-subtitle {
+  font-size: 15px;
+  color: #FFD54F;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  opacity: 0.9;
+  animation: splashFadeIn 1s ease-out .5s both;
+}
+.splash-loader {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  animation: splashFadeIn 1s ease-out .7s both;
+}
+.splash-loader-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FFD54F;
+  box-shadow: 0 0 12px rgba(255,213,79,0.8);
+  animation: splashBounce 1.2s ease-in-out infinite;
+}
+.splash-loader-dot:nth-child(1) { animation-delay: 0s; }
+.splash-loader-dot:nth-child(2) { animation-delay: .2s; }
+.splash-loader-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes splashBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-12px); opacity: 1; }
+}
+
+.splash-footer {
+  position: absolute;
+  bottom: 40px;
+  font-size: 13px;
+  color: rgba(255,213,79,0.7);
+  letter-spacing: 2px;
+  font-style: italic;
+  animation: splashFadeIn 1s ease-out 1s both;
+}
+
+#splash-screen .star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FFD54F;
+  border-radius: 50%;
+  animation: splashStarTwinkle 3s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(255,213,79,0.9);
+}
+@keyframes splashStarTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
