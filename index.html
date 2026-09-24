@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1A237E">
+  <title>خصائص الأسماء</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       شاشة الافتتاحية (Splash Screen)
+       ============================================================ -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo">
+        <div class="splash-circle-outer">
+          <div class="splash-circle-inner">
+            <span class="splash-letter">ع</span>
+          </div>
+          <span class="splash-dot dot-1">أ</span>
+          <span class="splash-dot dot-2">ب</span>
+          <span class="splash-dot dot-3">ج</span>
+          <span class="splash-dot dot-4">د</span>
+          <span class="splash-dot dot-5">هـ</span>
+          <span class="splash-dot dot-6">و</span>
+          <span class="splash-dot dot-7">ز</span>
+          <span class="splash-dot dot-8">ح</span>
+        </div>
+      </div>
+      <h1 class="splash-title">خصائص الأسماء</h1>
+      <p class="splash-subtitle">علم الحروف والأسماء والجفر</p>
+      <div class="splash-loader">
+        <div class="splash-loader-dot"></div>
+        <div class="splash-loader-dot"></div>
+        <div class="splash-loader-dot"></div>
+      </div>
+    </div>
+    <div class="splash-footer">✦ من نور الحروف تتجلى المعاني ✦</div>
+  </div>
+
+  <!-- ============================================================
+       الشاشة الرئيسية
+       ============================================================ -->
+  <div id="screen-home" class="screen active">
+    <div class="topbar-home">
+      <button class="btn-icon" onclick="toggleDarkMode()" id="darkToggle">🌙</button>
+      <h3>خصائص الأسماء</h3>
+      <div style="display:flex;gap:4px">
+        <button class="btn-icon" onclick="showDailyName()">🔔</button>
+        <button class="btn-icon" onclick="showSettings()">⚙️</button>
+        <button class="btn-icon" onclick="confirmExit()" title="خروج من التطبيق">🚪</button>
+      </div>
+    </div>
+
+    <div class="header">
+      <h1>✨ خصائص الأسماء</h1>
+      <p>أدخل الاسم لعرض خصائص حروفه ومعناه</p>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="nameInput" placeholder="اكتب الاسم هنا..." autocomplete="off">
+      <div class="date-row">
+        <label>🗓️ تاريخ الميلاد (اختياري):</label>
+        <input type="date" id="birthDate">
+      </div>
+      <button id="searchBtn" class="btn-primary">عرض الخصائص</button>
+    </div>
+
+    <div class="quick-links">
+      <button class="btn-outline" onclick="showFavorites()">❤️ المفضلة</button>
+      <button class="btn-outline" onclick="showHistory()">🕐 سجل البحث</button>
+      <button class="btn-outline" onclick="showLettersInfo()">📖 خصائص الحروف</button>
+      <button class="btn-outline" onclick="showNameGenerator()">🎲 اسم مقترح</button>
+      <button class="btn-outline" onclick="showAISemanticScreen()" style="flex:1 1 45%">🧠 محرك المعنى</button>
+      <button class="btn-outline" onclick="showJafrScreen()" style="flex:1 1 45%">🔮 علم الجفر</button>
+      <button class="btn-outline" onclick="showDeepSemanticScreen()" 
+        style="flex:1 1 100%;background:linear-gradient(135deg,#1A237E,#4A148C,#7B1FA2);color:#fff;border:none">
+        🌟 التحليل الجامع (نيلي + أهل البيت + قرآن + قاموس)
+      </button>
+      <button class="btn-outline" onclick="showFreeAISettings()" 
+        style="flex:1 1 100%;background:linear-gradient(135deg,#1A237E,#4A90E2);color:#fff;border:none">
+        🤖 تفعيل الذكاء الاصطناعي (مجاني)
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       شاشة النتائج
+       ============================================================ -->
+  <div id="screen-result" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2 id="resultName"></h2>
+      <div style="display:flex;gap:4px">
+        <button class="btn-fav" onclick="shareResult()">📤</button>
+        <button class="btn-fav" id="favBtn" onclick="toggleFavorite()">❤️</button>
+      </div>
+    </div>
+    <div class="result-content" id="resultContent"></div>
+  </div>
+
+  <!-- ============================================================
+       شاشة القوائم
+       ============================================================ -->
+  <div id="screen-list" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2 id="listTitle"></h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="listContent"></div>
+  </div>
+
+  <!-- ============================================================
+       شاشة خصائص الحروف
+       ============================================================ -->
+  <div id="screen-letters" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>خصائص الحروف</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="lettersContent"></div>
+  </div>
+
+  <!-- ============================================================
+       شاشة علم الجفر
+       ============================================================ -->
+  <div id="screen-jafr" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>🔮 علم الجفر</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="jafrContent"></div>
+  </div>
+
+  <!-- ============================================================
+       شاشة الاستخراج الجفري
+       ============================================================ -->
+  <div id="screen-jafr-calc" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="showJafrScreen()">→</button>
+      <h2 id="jafrCalcTitle">⚗️ الاستخراج الجفري</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="jafrCalcContent"></div>
+  </div>
+
+  <!-- ============================================================
+       السكريبتات — الترتيب مهم جداً
+       ============================================================ -->
+  <script src="script.js"></script>
+  <script src="extras.js"></script>
+  <script src="extras2.js"></script>
+  <script src="jafr.js"></script>
+  <script src="freeai.js"></script>
+  <script src="quran-index.js"></script>
+  <script src="interactive-ai.js"></script>
+  <script src="deep-semantic.js"></script>
+
+</body>
+</html>
